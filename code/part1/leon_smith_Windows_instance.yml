@@ -80,7 +80,7 @@ Resources:
           Value: DE-Extract-Windows-Instance
 Outputs:
   WindowsInstance:
-    Description: Private IP address of the newly created Windows EC2 instance
+    Description: Public IP address of the newly created Windows EC2 instance
     Value: !GetAtt
       - WindowsInstance
       - PublicIp

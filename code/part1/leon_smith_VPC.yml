@@ -79,8 +79,8 @@ Resources:
       GroupDescription: Security group for RDP access to Windows instance
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 3389
-          ToPort: 3389
+          FromPort: '3389'
+          ToPort: '3389'
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
@@ -88,13 +88,13 @@ Resources:
   FileServerSG:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      VpcID: !Ref VPC
+      VpcId: !Ref VPC
       GroupName: DE-Extract-FileServerSG
       GroupDescription: Security group for ssh access to data center file server
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
+          FromPort: '22'
+          ToPort: '22'
           CidrIp: 192.168.10.0/24
       Tags:
         - Key: Name
@@ -107,8 +107,8 @@ Resources:
       GroupDescription: Security group for access to file gateway instance
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 1
-          ToPort: 65534
+          FromPort: '1'
+          ToPort: '65534'
           CidrIp: 192.168.0.0/16
       Tags:
         - Key: Name
